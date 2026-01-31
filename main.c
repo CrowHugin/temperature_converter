@@ -7,6 +7,7 @@
 int main(int argc, char** argv){
   int i;
   int opt;
+  double temp;
 
   char* unity;
 
@@ -23,7 +24,7 @@ int main(int argc, char** argv){
     }
   }
 
-  while((opt = getopt(argc, argv,"tu")) != -1)
+  while((opt = getopt(argc, argv,"t:u")) != -1)
   {
     switch (opt) 
     {
@@ -45,7 +46,14 @@ For help use -h or --help\n",unity);
         break;
 
       case 't':
-        printf("t\n");
+        temp = atof(optarg);
+        if (temp < -273.15 || temp > 212 || temp == 0.00)
+        {
+          printf("ERROR:\nPlease retry with a value above\
+ -273.15°C and under 212°F\n");
+        }else{
+          printf("%.2f\n",temp);
+        }
         break;
     }
   }
