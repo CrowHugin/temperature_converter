@@ -33,6 +33,10 @@ int main(int argc, char** argv){
         {
           break;
         }
+        else if ((strcmp(unity,"F") == 0 || strcmp(unity,"Farenheit") == 0))
+        {
+          break;
+        }
         else{
           printf("%s is not an option, please retry\n\
 For help use -h or --help\n",unity);
