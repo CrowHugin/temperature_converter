@@ -6,7 +6,7 @@
 
 
 
-void convertion(char* un, double temperature){
+void conversion(char* un, double temperature){
   double res;
   double cons  = 1.8; // value of 9/5 for C to F
   double cons_ = 0.55;// value of 5/9 for F to C
@@ -21,10 +21,7 @@ void convertion(char* un, double temperature){
     res = (temperature-32)*0.55;
     printf("%.0f°F is %.2f°C\n",temperature, res);
   }
-
 }
-
-
 
 int main(int argc, char** argv){
   int i;
@@ -38,10 +35,7 @@ int main(int argc, char** argv){
   bool check_unit = false;
   bool check_temp = false;
 
-
   opterr = 0;
-
-
 
   for ( i=1;i<argc;i++)
   {
@@ -89,7 +83,7 @@ For help use -h or --help\n",unity);
   }
 
   if (check_unit && check_temp)
-    convertion(unity_, temp);
+    conversion(unity_, temp);
 
   return 0;
 }
