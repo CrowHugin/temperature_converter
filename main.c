@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 
@@ -6,6 +7,8 @@
 int main(int argc, char** argv){
   int i;
   int opt;
+
+  char* unity;
 
   opterr = 0;
 
@@ -25,7 +28,16 @@ int main(int argc, char** argv){
     switch (opt) 
     {
       case 'u':
-        printf("u\n");
+        unity = argv[optind];
+        if (strcmp(unity,"C") == 0 || strcmp(unity,"Celsius") == 0)
+        {
+          break;
+        }
+        else{
+          printf("%s is not an option, please retry\n\
+For help use -h or --help\n",unity);
+          exit(EXIT_FAILURE);
+        }
         break;
 
       case 't':
